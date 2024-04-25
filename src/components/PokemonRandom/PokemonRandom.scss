@@ -1,0 +1,23 @@
+.pokemonRandom {
+  width: 70%;
+  height: 60%;
+  background-color: #3a61db;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  &__info {
+    width: 80%;
+    text-align: center;
+    margin-left: 150px;
+  }
+  &__description {
+    display: flex;
+    gap: 150px;
+    &-text {
+      outline: 1px solid black;
+      width: 50%;
+    }
+  }
+}
