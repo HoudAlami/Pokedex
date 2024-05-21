@@ -1,0 +1,13 @@
+.character {
+  // outline: 1px black solid;
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  padding: 50px;
+  margin: 50px;
+  background-color: grey;
+  border-radius: 20px;
+  &__image {
+    width: 80px;
+  }
+}

@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.scss';
 import axios from 'axios';
 import PokemonRandom from '../../components/PokemonRandom/PokemonRandom';
@@ -42,9 +43,12 @@ function Home() {
   return (
     <div className="home">
       <h1 className="home__title">DB DEX</h1>
-      <div className="home__item">
-        <h2 className="home__item-title">Liste des Pokemons</h2>
-      </div>
+      <Link to="/characterList" className="home__link">
+        <div className="home__link-item">
+          <h2 className="home__item-title">Liste des Pokemons</h2>
+        </div>
+      </Link>
+
       {/* Passer le tableau characters au composant PokemonRandom */}
       <PokemonRandom characters={characters} />
     </div>
