@@ -22,17 +22,17 @@ function PokemonRandom({ characters }: PokemonRandomProps) {
     <div className="pokemonRandom">
       <h3 className="pokemonRandom__title">Personnage Aléatoire</h3>
       {randomCharacter && ( // Vérification si un personnage est disponible
-        <div>
+        <div className="pokemonRandom__area">
           <div className="pokemonRandom__info">
-            <h3 className="pokemonRandom__name">{randomCharacter.name}</h3>
-            <p className="pokemonRandom__type">{randomCharacter.race}</p>
+            <h3 className="pokemonRandom__info-name">{randomCharacter.name}</h3>
+            <p className="pokemonRandom__info-race">{randomCharacter.race}</p>
           </div>
           <div className="pokemonRandom__description">
             <p className="pokemonRandom__description-text">
               {randomCharacter.description}
             </p>
             <img
-              src={randomCharacter.image} // Utilisation de l'image du personnage
+              src={randomCharacter.image}
               alt={randomCharacter.name}
               className="pokemonRandom__description-image"
             />
