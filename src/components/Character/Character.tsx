@@ -1,16 +1,13 @@
 import React from 'react';
 import './Character.scss';
 
-type OneCharacter = {
-  id: number;
-  name: string;
-  race: string;
-  description: string;
-  image: string;
-};
-
 type CharacterProps = {
-  character: OneCharacter;
+  character: {
+    id: number;
+    name: string;
+    race: string;
+    image: string;
+  };
 };
 
 function Character({ character }: CharacterProps) {
@@ -18,13 +15,9 @@ function Character({ character }: CharacterProps) {
     <div className="character">
       <div className="character__info">
         <h3 className="character__info-name">{character.name}</h3>
-        <p className="character__info-race">Sayan</p>
+        <p className="character__info-race">{character.race}</p>
       </div>
-      <img
-        src="public\assets\db.png"
-        alt="boule"
-        className="character__image"
-      />
+      <img src={character.image} alt="boule" className="character__image" />
     </div>
   );
 }

@@ -1,25 +1,11 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import './CharacterList.scss';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import Character from '../../components/Personnage/Character';
+import { useData } from '../../provider/DataContext';
+import Character from '../../components/Character/Character';
 
-type CharacterType = {
-  id: number;
-  name: string;
-  race: string;
-  description: string;
-  image: string;
-};
-
-type CharacterListProps = {
-  characters: CharacterType[];
-};
-
-function CharacterList({ characters }: CharacterListProps) {
-  const location = useLocation();
-  const charactersLocation: CharacterType[] = location.state?.characters || [];
-
+function CharacterList() {
+  const { characters } = useData();
   return (
     <div className="characterList">
       <h2>Liste des personnages</h2>
