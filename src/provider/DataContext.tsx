@@ -48,7 +48,7 @@ export function DataProvider({ children }: DataProviderProps) {
         const response = await axios.get(
           'https://dragonball-api.com/api/characters?limit=58'
         );
-        // console.log(response.data.items);
+        console.log(response.data.items);
 
         // Vérifier si la réponse contient bien un objet avec une propriété 'items'
         if (response.data.items) {

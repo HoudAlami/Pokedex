@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './CharacterList.scss';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import { Link } from 'react-router-dom';
 import { useData } from '../../provider/DataContext';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import Character from '../../components/Character/Character';
+import './CharacterList.scss';
 
 function CharacterList() {
   const { characters } = useData();
@@ -18,10 +19,16 @@ function CharacterList() {
 
   return (
     <div className="characterList">
+      <Link to="/">
+        <h1>retour</h1>
+      </Link>
+
       <h2>Liste des personnages</h2>
       <SearchBar inputValue={searchValue} handleChange={handleSearchChange} />
       {filteredCharacters.map((character) => (
-        <Character key={character.id} character={character} />
+        <Link to={`/character/${character.id}`} key={character.id}>
+          <Character character={character} />
+        </Link>
       ))}
     </div>
   );
