@@ -1,18 +1,18 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.scss';
-import axios from 'axios';
+// import axios from 'axios';
 import PokemonRandom from '../../components/PokemonRandom/PokemonRandom';
 import { useData } from '../../provider/DataContext';
 
-type Character = {
-  id: number;
-  name: string;
-  race: string;
-  description: string;
-  image: string;
-};
+// type Character = {
+//   id: number;
+//   name: string;
+//   race: string;
+//   description: string;
+//   image: string;
+// };
 
 function Home() {
   const { characters } = useData();
