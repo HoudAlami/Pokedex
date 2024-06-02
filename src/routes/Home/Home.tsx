@@ -47,7 +47,7 @@ function Home() {
       <h1 className="home__title">DB DEX</h1>
       <Link to="/characterList" className="home__link">
         <div className="home__link-item">
-          <h2 className="home__item-title">Liste des Pokemons</h2>
+          <h2 className="home__item-title">Liste des personnages</h2>
         </div>
       </Link>
 

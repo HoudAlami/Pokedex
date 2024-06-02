@@ -1,5 +1,6 @@
 import React from 'react';
 import './PokemonRandom.scss';
+import { Link } from 'react-router-dom';
 
 type Character = {
   id: number;
@@ -14,14 +15,19 @@ type PokemonRandomProps = {
 };
 
 function PokemonRandom({ characters }: PokemonRandomProps) {
+  if (characters.length === 0) {
+    return (
+      <div className="pokemonRandom__error">Aucun personnage disponible</div>
+    );
+  }
   const randomIndex = Math.floor(Math.random() * characters.length);
   const randomCharacter = characters[randomIndex];
   // console.log(randomCharacter);
 
   return (
-    <div className="pokemonRandom">
-      <h3 className="pokemonRandom__title">Personnage Aléatoire</h3>
-      {randomCharacter && ( // Vérification si un personnage est disponible
+    <Link to={`/character/${randomCharacter.id}`}>
+      <div className="pokemonRandom">
+        <h3 className="pokemonRandom__title">Personnage Aléatoire</h3>
         <div className="pokemonRandom__area">
           <div className="pokemonRandom__info">
             <h3 className="pokemonRandom__info-name">{randomCharacter.name}</h3>
@@ -37,9 +43,10 @@ function PokemonRandom({ characters }: PokemonRandomProps) {
               className="pokemonRandom__description-image"
             />
           </div>
+          {/* <img src="public\Dragon-Ball-Goku-PNG-Images.png" alt="/" /> */}
         </div>
-      )}
-    </div>
+      </div>
+    </Link>
   );
 }
 
