@@ -14,6 +14,7 @@ function SearchBar({ inputValue, handleChange }: SearchBarProps) {
         className="searchBar__input"
         value={inputValue}
         onChange={handleChange}
+        placeholder="Recheche ton guerrier !!!"
       />
     </div>
   );

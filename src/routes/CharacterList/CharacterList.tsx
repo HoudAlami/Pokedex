@@ -19,17 +19,19 @@ function CharacterList() {
 
   return (
     <div className="characterList">
-      <Link to="/">
+      <Link to="/" className="charecterList__return">
         <h1>retour</h1>
       </Link>
 
-      <h2>Liste des personnages</h2>
+      <h2 className="characterList__title">Liste des personnages</h2>
       <SearchBar inputValue={searchValue} handleChange={handleSearchChange} />
-      {filteredCharacters.map((character) => (
-        <Link to={`/character/${character.id}`} key={character.id}>
-          <Character character={character} />
-        </Link>
-      ))}
+      <div className="characterList__area">
+        {filteredCharacters.map((character) => (
+          <Link to={`/character/${character.id}`} key={character.id}>
+            <Character character={character} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

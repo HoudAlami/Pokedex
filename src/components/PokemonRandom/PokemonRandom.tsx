@@ -25,8 +25,8 @@ function PokemonRandom({ characters }: PokemonRandomProps) {
   // console.log(randomCharacter);
 
   return (
-    <Link to={`/character/${randomCharacter.id}`}>
-      <div className="pokemonRandom">
+    <div className="pokemonRandom">
+      <Link to={`/character/${randomCharacter.id}`} className="Link">
         <h3 className="pokemonRandom__title">Personnage Aléatoire</h3>
         <div className="pokemonRandom__area">
           <div className="pokemonRandom__info">
@@ -43,10 +43,14 @@ function PokemonRandom({ characters }: PokemonRandomProps) {
               className="pokemonRandom__description-image"
             />
           </div>
-          {/* <img src="public\Dragon-Ball-Goku-PNG-Images.png" alt="/" /> */}
         </div>
-      </div>
-    </Link>
+        <img
+          src="public\Dragon-Ball-Goku-PNG-Images.png"
+          alt="/"
+          className="goku"
+        />
+      </Link>
+    </div>
   );
 }
 
